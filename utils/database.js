@@ -14,7 +14,9 @@ import mongoose from "mongoose";
 
     try {
         await mongoose.connect(process.env.MONGODB_URI, {
-            dbName:"share-Prompt"
+            dbName:"share-Prompt",
+            useNewUrlParser: true,
+            useUnifiedTopology: true
         });
 
         isConnected = true;
