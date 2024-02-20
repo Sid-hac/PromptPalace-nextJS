@@ -7,8 +7,8 @@ import User from "@models/users";
 const handler = nextAuth({
     providers: [
         GoogleProvider({
-            clientId: process.env.GOOGLE_ID,
-            clientSecret: process.env.GOOGLE_SECRET
+            clientId: process.env.NEXT_GOOGLE_ID,
+            clientSecret: process.env.NEXT_GOOGLE_SECRET
         })
     ],
 
@@ -30,6 +30,7 @@ const handler = nextAuth({
               try {
                 await connectToDB();
                 //user already exists
+                console.log("db already exists");
 
                 const userExists = await User.findOne({
                     email: profile.email
