@@ -13,7 +13,7 @@ import mongoose from "mongoose";
     }
 
     try {
-        await mongoose.connect(process.env.NEXT_MONGODB_URI, {
+        await mongoose.connect(process.env.MONGODB_URI, {
             dbName:"share-Prompt",
             useNewUrlParser: true,
             useUnifiedTopology: true
