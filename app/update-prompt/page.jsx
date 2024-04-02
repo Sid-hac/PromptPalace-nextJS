@@ -5,13 +5,10 @@ import Form from "@components/Form";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState, useEffect, Suspense } from "react";
 
-const SuspenseWrapper = ({ children }) => {
-  return <Suspense fallback={<LoadingSpinner />}>{children}</Suspense>;
-};
 
 const EditPrompt = () => {
   const router = useRouter();
-
+  console.log(router);
   const searchParams = useSearchParams();
   const promptId = searchParams.get("id");
 
@@ -58,7 +55,7 @@ const EditPrompt = () => {
     }
   };
   return (
-    <SuspenseWrapper>
+    <Suspense>
       <Form
         type="Edit"
         post={post}
@@ -66,7 +63,7 @@ const EditPrompt = () => {
         submitting={submitting}
         handleSubmit={updatePrompt}
       />
-    </SuspenseWrapper>
+    </Suspense>
   );
 };
 
