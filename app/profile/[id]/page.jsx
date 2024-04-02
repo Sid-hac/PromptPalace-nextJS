@@ -10,8 +10,11 @@ const UserProfile = ({params}) => {
    const [userposts , setUserPosts] = useState([]);
    const {data : session} =  useSession();
    const router = useRouter();
+   
+  
    const searchparams = useSearchParams();
    const username = searchparams.get('name');
+   
 
 
    useEffect(() => {

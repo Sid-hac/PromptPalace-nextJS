@@ -9,6 +9,7 @@ const MyProfile = () => {
    const [posts , setPosts] = useState([]);
    const {data : session} =  useSession();
    const router = useRouter();
+   console.log();
 
 
    useEffect(() => {
