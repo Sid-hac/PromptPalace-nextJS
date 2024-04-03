@@ -10,7 +10,6 @@ const PromptCard = ({post , handelTagClick , handleEdit , handleDelete} , {param
     const { data : session} = useSession();
     const pathName = usePathname();
     const router = useRouter();
-    console.log(post);
     
 
     const handleProfileClick = () => {
