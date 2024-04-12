@@ -1,6 +1,8 @@
 import React from 'react'
 import PromptCard from './PromptCard'
 
+// adding comment
+
 const Profile = ({name , desc , data , handleEdit , handleDelete}) => {
   return (
        <section className='w-full'>
