@@ -1,11 +1,11 @@
 
 import { connectToDB } from "@utils/database";
-import nextAuth from "next-auth";
+import NextAuth from "next-auth";
 import GoogleProvider from 'next-auth/providers/google';
 import User from "@models/users";
-import Nextauth from "../[...nextauth]";
+// import Nextauth from "../[...nextauth]";
 
-const handler = Nextauth({
+const handler = NextAuth({
     providers: [
         GoogleProvider({
             clientId: process.env.GOOGLE_ID,
@@ -27,6 +27,8 @@ const handler = Nextauth({
            },
 
            async signIn({profile}){
+              
+            console.log(profile);
               
               try {
                 await connectToDB();
